@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Visualizador de Cosseno</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Visualizador Interativo de Cosseno, Seno e Tangente</h1>
+   
+
+    <label for="modo">Escolha os dados que deseja fornecer:</label>
+    <select id="modo" onchange="atualizarCampos()">
+      
+      <option value="angulo">Ângulo (graus)</option>
+      <option value="catetos">Cateto adjacente e hipotenusa</option>
+      <option value="coordenadas">Coordenadas (x, y)</option>
+    </select>
+
+    <div id="inputs">
+      <!-- Inputs dinâmicos aqui -->
+    </div>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div id="resultado"></div>
+
+    <canvas id="circuloCanvas" width="400" height="400"></canvas>
+
+    <div class="legenda">
+      <h3>Legenda:</h3>
+      <ul>
+        <li><span class="cor azul"></span> Raio (linha do ângulo)</li>
+        <li><span class="cor vermelha"></span> Cosseno (eixo X)</li>
+        <li><span class="cor verde"></span> Seno (eixo Y)</li>
+        <li><span class="cor laranja"></span> Tangente (reta externa)</li>
+        <li><span class="cor preta"></span> Circunferência unitária</li>
+      </ul>
+    </div>
+
+    <div class="valores-numericos">
+      <h3>Valores:</h3>
+      <p><strong>Seno:</strong> <span id="valorSeno">-</span></p>
+      <p><strong>Cosseno:</strong> <span id="valorCosseno">-</span></p>
+      <p><strong>Tangente:</strong> <span id="valorTangente">-</span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
